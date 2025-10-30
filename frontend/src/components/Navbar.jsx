@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../components/navbar.css";
+import "./Navbar.css"
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ export default function Navbar() {
       <div className="logo" onClick={() => navigate("/")}>
         PrepMate AI
       </div>
+      
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/features">Features</Link></li>
