@@ -6,8 +6,25 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // For now, just alert form submission
-    alert("Thank you! Your message has been sent.");
+    // Construct a mailto link so the user's default mail client opens with prefilled fields
+    const form = formRef.current;
+    const name = form.querySelector('input[type="text"]').value || '';
+    const email = form.querySelector('input[type="email"]').value || '';
+    // the second text input is the Subject
+    const subject = form.querySelectorAll('input[type="text"]')[1]?.value || 'Contact from PrepMate AI';
+    const message = form.querySelector('textarea')?.value || '';
+
+    const fullSubject = `${subject}`;
+    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+    const mailto = `mailto:khushishrivas82@gmail.com?subject=${encodeURIComponent(fullSubject)}&body=${body}`;
+
+    // Open mail client. If popup blocked, show a fallback alert.
+    try {
+      window.location.href = mailto;
+    } catch (err) {
+      alert('Please send your message to khushishrivas82@gmail.com');
+    }
+
     formRef.current.reset();
   };
 
@@ -27,7 +44,7 @@ const ContactPage = () => {
       </form>
 
       <div className="contact-details">
-        <p>Email: <a href="khushishrivas82@gmail.com">khushishrivas82@gmail.com</a></p>
+        <p>Email: <a href="mailto:khushishrivas82@gmail.com">khushishrivas82@gmail.com</a></p>
         <p>Instagram: <a href="https://instagram.com/prepmateai">@PrepMateAI</a></p>
       </div>
     </section>

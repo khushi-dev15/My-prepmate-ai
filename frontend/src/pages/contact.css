@@ -105,3 +105,16 @@
     font-size: 1rem;
   }
 }
+
+/* Ensure spacing from fixed navbar and improved small-screen layout */
+@media (max-width: 900px) {
+  .contact-section { padding-top: 110px; padding-left: 1.25rem; padding-right: 1.25rem; }
+  .contact-form { max-width: 100%; }
+  .contact-form input, .contact-form textarea { font-size: 1rem; padding: 0.9rem; }
+  .contact-btn { padding: 0.95rem; font-size: 1rem; }
+}
+
+@media (max-width: 380px) {
+  .contact-section { padding-top: 100px; }
+  .contact-form textarea { font-size: 0.95rem; }
+}

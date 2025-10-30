@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+/* Responsive typography and spacing */
+html { font-size: 16px; }
+@media (max-width: 1200px) { html { font-size: 15px; } }
+@media (max-width: 800px) { html { font-size: 14px; } }
+@media (max-width: 400px) { html { font-size: 13px; } }
+
 .logo {
   height: 6em;
   padding: 1.5em;
