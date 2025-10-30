@@ -1,0 +1,32 @@
+# Root .gitignore for Prepmate-AI
+
+# Node modules
+node_modules/
+
+# Env files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Build outputs
+dist/
+build/
+
+# Vite / Editor
+.vscode/
+.idea/
+
+# Optional: ignore backend/frontend local node_modules
+/frontend/node_modules/
+/backend/node_modules/
+
+# Backup files
+*.backup
+
