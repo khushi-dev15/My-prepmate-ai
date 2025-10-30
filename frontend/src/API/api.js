@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000/api", // ✅ Correct backend base API
+  baseURL: "https://prepmate-ai-bknd.onrender.com", // ✅ Correct backend base API
 });
 
 axiosInstance.interceptors.request.use((config) => {
